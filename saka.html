@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmer Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Verdana", "Georgia", serif;
+        background: linear-gradient(
+          135deg,
+          #ff6b00 0%,
+          #ffd700 50%,
+          #ff0000 100%
+        );
+        color: #1a1a1a;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* Header dengan style India  */
+      header {
+        background: linear-gradient(
+          180deg,
+          #ff8c00 0%,
+          #ffd700 50%,
+          #ff6b00 100%
+        );
+        border-radius: 20px;
+        padding: 35px;
+        margin-bottom: 30px;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6),
+          0 0 20px rgba(255, 215, 0, 0.5);
+        border: 4px solid #ff0000;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "✦ ✦ ✦";
+        position: absolute;
+        top: 5px;
+        width: 100%;
+        text-align: center;
+        color: #ff0000;
+        font-size: 20px;
+      }
+
+      header::after {
+        content: "✦ ✦ ✦";
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        text-align: center;
+        color: #ff0000;
+        font-size: 20px;
+      }
+
+      h1 {
+        color: #ff0000;
+        font-size: 52px;
+        text-shadow:
+          3px 3px 0px rgba(255, 215, 0, 0.8),
+          5px 5px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 10px;
+        font-weight: 900;
+        letter-spacing: 2px;
+      }
+
+      .tagline {
+        color: #1a1a1a;
+        font-size: 20px;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      /* Navigation */
+      nav {
+        background: linear-gradient(180deg, #ff0000 0%, #cc0000 100%);
+        padding: 18px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow:
+          0 8px 16px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 0 15px rgba(255, 0, 0, 0.4);
+        border: 3px solid #ff6b00;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 25px;
+        display: inline-block;
+        margin: 8px;
+        background: linear-gradient(180deg, #0066ff 0%, #0044aa 100%);
+        border-radius: 12px;
+        border: 3px solid #003366;
+        box-shadow:
+          0 6px 12px rgba(0, 0, 0, 0.4),
+          0 0 10px rgba(0, 100, 255, 0.5);
+        font-weight: 900;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      nav a:hover {
+        background: linear-gradient(180deg, #00ff00 0%, #00cc00 100%);
+        color: #000;
+        transform: scale(1.1) rotate(-2deg);
+        box-shadow:
+          0 8px 16px rgba(0, 0, 0, 0.5),
+          0 0 20px rgba(0, 255, 0, 0.6);
+        border-color: #00aa00;
+      }
+
+      /* Container */
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      /* Section style */
+      section {
+        background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          0 0 15px rgba(255, 100, 0, 0.4);
+        border: 4px dashed #ff6b00;
+        position: relative;
+      }
+
+      section::before {
+        content: "◆◆◆◆◆";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ff0000;
+        font-size: 16px;
+        background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+        padding: 0 15px;
+      }
+
+      h2 {
+        color: #ff0000;
+        font-size: 36px;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #ff6b00;
+        padding-bottom: 15px;
+        text-shadow: 3px 3px 0px rgba(255, 215, 0, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      h3 {
+        color: #ff0000;
+        font-size: 26px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 0px rgba(255, 215, 0, 0.7);
+        border-left: 5px solid #ff6b00;
+        padding-left: 12px;
+      }
+
+      p {
+        line-height: 1.9;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+
+      /* Portfolio items */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+      }
+
+      .portfolio-item {
+        background: linear-gradient(
+          135deg,
+          #ff6b00 0%,
+          #ffd700 50%,
+          #ff0000 100%
+        );
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          0 0 15px rgba(255, 100, 0, 0.5);
+        border: 4px solid #000;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .portfolio-item::before {
+        content: "★ ★ ★";
+        position: absolute;
+        top: 5px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow:
+          0 15px 30px rgba(0, 0, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          0 0 25px rgba(255, 215, 0, 0.7);
+      }
+
+      .portfolio-item h4 {
+        color: #fff;
+        margin-bottom: 12px;
+        margin-top: 20px;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: 900;
+      }
+
+      .portfolio-item p {
+        color: #fff;
+        font-size: 14px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Skill bars */
+      .skill {
+        margin-bottom: 25px;
+      }
+
+      .skill-name {
+        color: #ff0000;
+        font-weight: 900;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-shadow: 1px 1px 0px rgba(255, 215, 0, 0.6);
+      }
+
+      .skill-bar {
+        background: linear-gradient(90deg, #ddd 0%, #999 100%);
+        border-radius: 12px;
+        height: 35px;
+        overflow: hidden;
+        border: 3px solid #ff0000;
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.3),
+          0 0 10px rgba(255, 0, 0, 0.3);
+      }
+
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          #ff6b00 0%,
+          #ffd700 50%,
+          #ff0000 100%
+        );
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 900;
+        font-size: 13px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        color: white;
+        margin-top: 40px;
+        padding: 25px;
+        background: linear-gradient(180deg, #ff0000 0%, #cc0000 100%);
+        border-radius: 15px;
+        font-size: 14px;
+        border: 3px solid #ff6b00;
+        box-shadow:
+          0 8px 16px rgba(0, 0, 0, 0.4),
+          0 0 15px rgba(255, 0, 0, 0.3);
+        font-weight: bold;
+      }
+
+      footer a {
+        color: #ffd700;
+        text-decoration: none;
+        font-weight: 900;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+
+      /* Divider */
+      hr {
+        border: none;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #ff6b00,
+          #ffd700,
+          #ff6b00,
+          transparent
+        );
+        margin: 30px 0;
+        box-shadow: 0 0 10px rgba(255, 100, 0, 0.4);
+      }
+
+      /* List style */
+      ul,
+      ol {
+        margin-left: 35px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 10px;
+        color: #1a1a1a;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>PROGRAMMER HAMDAL</h1>
+        <p class="tagline">Web Developer | Coder | Tech Enthusiast |</p>
+      </header>
+
+      <!-- Navigation -->
+      <nav>
+        <a href="#about">● ABOUT ●</a>
+        <a href="#portfolio">● PORTFOLIO ●</a>
+        <a href="#skills">● SKILLS ●</a>
+        <a href="#contact">● CONTACT ●</a>
+      </nav>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>⭐ ABOUT ME ⭐</h2>
+        <p>
+          Saya adalah seorang Frontend Web Developer yang antusias dalam
+          menciptakan pengalaman digital yang menarik dan intuitif. Saya
+          memiliki ketertarikan kuat pada UI/UX Design dan senang membangun
+          antarmuka modern yang responsive, interaktif, dan mudah digunakan.
+        </p>
+      
+        <p>
+          📍 Location: <strong>Probolinggo</strong>
+        </p>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio">
+        <h2>⭐ PORTFOLIO ⭐</h2>
+        <p>Meri best projects dekho:</p>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <h4>CORPORATE SITE</h4>
+            <p>E-Commerce Website</p>
+          </div>
+          <div class="portfolio-item">
+            <h4>STARTUP APP</h4>
+            <p>Mobile Responsive Design</p>
+          </div>
+          <div class="portfolio-item">
+            <h4>BRAND DESIGN</h4>
+            <p>Logo & Branding</p>
+          </div>
+          <div class="portfolio-item">
+            <h4>WEB APP</h4>
+            <p>Dynamic Web Application</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>⭐ MY SKILLS ⭐</h2>
+
+        <h3>🔥 TECHNICAL SKILLS</h3>
+        <div class="skill">
+          <div class="skill-name">
+            <span>HTML / CSS / JAVASCRIPT</span>
+            <span>98%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 98%">98%</div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>PHP / MYSQL DATABASE</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 95%">95%</div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>WEB DESIGN & UI/UX</span>
+            <span>92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 92%">92%</div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>PHOTOSHOP & GRAPHICS</span>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 88%">88%</div>
+          </div>
+        </div>
+
+        <hr />
+
+        <h3>🎯 OTHER SKILLS</h3>
+        <ul>
+          <li>SEO Optimization & Website Marketing</li>
+          <li>Cross-Browser Compatibility Testing</li>
+          <li>Responsive & Mobile Design</li>
+          <li>Content Management Systems (CMS)</li>
+          <li>API Development & Integration</li>
+          <li>Website Speed Optimization</li>
+          <li>Security & Data Protection</li>
+          <li>Customer Support & Maintenance</li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>⭐ CONTACT ME ⭐</h2>
+        <p>Mujhe contact karo aur project discuss karate hain! 📞</p>
+        <ul>
+          <li>📧 <strong>EMAIL:</strong> programmer@gmail.com</li>
+          <li>📱 <strong>PHONE:</strong> +91 98765 43210</li>
+          <li>📍 <strong>LOCATION:</strong> New Delhi, India</li>
+          <li>💬 <strong>MSN/SKYPE:</strong> coder@live.com</li>
+          <li>🌐 <strong>WEBSITE:</strong> www.myportfolio.in</li>
+        </ul>
+        <p style="margin-top: 25px; font-weight: bold; color: #ff0000">
+          ⭐ Follow Me On: Orkut • Friendster • MySpace • Multiply ⭐
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy;   PROGRAMMER PORTFOLIO. All Rights Reserved.</p>
+        <p>🚀 Design &amp; Coding by <a href="#"> Developer</a> 🚀</p>
+        <p style="margin-top: 15px; font-size: 13px">
+          ★ Last Updated: February  ★ Made with ❤️ in India ❤️ ★
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
