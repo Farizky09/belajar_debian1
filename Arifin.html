@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio-Ku</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: blue;
+        }
+
+        .palingduwur {
+            width: 100%;
+            /* height: 100px; */
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+        }
+
+        .gedekno {
+            font-size: 50px;
+        }
+
+        .tengahnocuy {
+            text-align: center;
+
+            /* justify-content: center; */
+        }
+
+        .poksomenengah {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .tebel {
+            font-weight: bold;
+        }
+
+        .wernocian {
+            color: rgb(0, 255, 195);
+        }
+
+        .wernoungu {
+            color: chartreuse;
+        }
+
+        .bagiankiri {
+            width: 50%;
+            /* float: left; */
+        }
+
+        .kirinocuy {
+            text-align: left;
+        }
+
+        .bunder {
+            z-index: 100;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background-color: white;
+            margin-left: 7.5px;
+            border: 3px black solid;
+        }
+
+        .bunder:hover {
+            animation: bgColor 1s infinite linear alternate, rotation .5s infinite linear alternate, bundereGedi 1s infinite linear alternate;
+
+        }
+
+        .ngambang {
+            position: absolute;
+
+        }
+
+        .isinerek {}
+
+        .semrawut {
+            display: inline-block;
+            animation: semrawut 0.15s infinite;
+        }
+
+        .loncat {
+            animation: loncat 0.6s infinite ease-in-out;
+        }
+
+        .geter:hover {
+            animation: semrawut 0.08s infinite;
+        }
+
+        .mumet {
+            display: inline-block;
+            transform-origin: 50% 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes rotation {
+            0% {
+
+                transform: rotate(0deg);
+            }
+
+            100% {
+
+                transform: rotate(360deg);
+            }
+
+
+        }
+
+        @keyframes bundereGedi {
+            from {
+
+                border-radius: 100%;
+                width: 80px;
+                height: 80px;
+                /* top: 0;
+                left: 0; */
+                left: 0px;
+            }
+
+            to {
+
+                width: 400px;
+                height: 400px;
+                border-radius: 100%;
+                /* top: 0;*/
+                left: -20px;
+            }
+
+
+        }
+
+        @keyframes bgColor {
+            12.5% {
+                background-color: #FF0000;
+            }
+
+            25% {
+                background-color: #FFA500;
+            }
+
+            37.5% {
+                background-color: #FFFF00;
+            }
+
+            50% {
+                background-color: #7FFF00;
+            }
+
+            62.5% {
+                background-color: #00FFFF;
+            }
+
+            75% {
+                background-color: #0000FF;
+            }
+
+            87.5% {
+                background-color: #9932CC;
+            }
+
+            100% {
+                background-color: #FF1493;
+            }
+        }
+
+        @keyframes color {
+            12.5% {
+                color: #FF0000;
+            }
+
+            25% {
+                color: #FFA500;
+            }
+
+            37.5% {
+                color: #FFFF00;
+            }
+
+            50% {
+                color: #7FFF00;
+            }
+
+            62.5% {
+                color: #00FFFF;
+            }
+
+            75% {
+                color: #0000FF;
+            }
+
+            87.5% {
+                color: #9932CC;
+            }
+
+            100% {
+                color: #FF1493;
+            }
+        }
+
+        @keyframes semrawut {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            20% {
+                transform: translate(-3px, 2px) rotate(-2deg);
+            }
+
+            40% {
+                transform: translate(4px, -3px) rotate(2deg);
+            }
+
+            60% {
+                transform: translate(-2px, -4px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(3px, 3px) rotate(1deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @keyframes loncat {
+            0% {
+                transform: translate(-50%, 0%);
+
+            }
+
+            50% {
+                transform: translate(-50%, 50%);
+            }
+
+            100% {
+                transform: translate(-50%, 0%);
+            }
+        }
+
+
+        .wernoputih {
+            color: white;
+        }
+
+        .jenengku {
+            animation: color 1s linear alternate infinite;
+        }
+
+        .otengah {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wirengrek {
+            color: black;
+            background-color: black;
+        }
+
+        .setengahlayarae {
+            width: 60%;
+        }
+
+        .ilangnomargine {
+            margin: 0;
+        }
+
+        .marginsiji {
+            margin-top: 30px;
+        }
+
+        .bgputih {
+            background-color: white;
+        }
+
+        .paddingerek {
+            padding-bottom: 13px;
+        }
+
+        .paddingrek {
+            padding-top: 5px;
+        }
+
+        .bgneopoyo {
+            background-color: aqua;
+        }
+
+        .bgsalmon {
+            background-color: salmon;
+        }
+
+        .paddingcuy {
+            padding: 15px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="palingduwur">
+        <div class="bunder kirinocuy ngambang otengah">
+            O
+        </div>
+        <h1 class="gedekno poksomenengah tebel loncat mumet">Portofolio-Ku</h1>
+    </div>
+    <div class="isinerek kotakisiloro">
+        <!-- <hr class="wirengrek" color="black"> -->
+        <h1 class="jenengku ilangnomargine marginsiji geter mumet">Moch. Arifin Hidayatullah,</h1>
+        <h1 class="ilangnomargine">
+            <marquee behavior="alternate" direction="right">
+                <span class="wernocian">
+                    Mobil Developer
+                </span> dan <span class="wernoungu">Web
+                    site Developer</span>
+            </marquee>
+        </h1>
+        <p class="wernoputih setengahlayarae">Saya suka buat aplikasi website dan android. Saya biasa
+            menggunakan bahasa html
+            dan css untuk
+            ngoding.
+            Visual studio cod dan xampp adalah aplikasi yang saya gunakan untuk ngoding</p>
+        <div class="keahliankurek bgsalmon paddingerek">
+            <!-- <hr class="abangbro" color="black" size="10px" style="margin: 10px 0px;"> -->
+            <div class="paddingrek">
+                <h2 class="ilangnomargine">Keahlian saya : </h2>
+                <ol class="ilangnomargine">
+                    <li class="tebel">Membuat aplikasi desktop</li>
+                    <li class="tebel">Membuat aplikasi mobil android</li>
+                    <li class="tebel">Membuat aplikasi web site</li>
+                </ol>
+            </div>
+        </div>
+        <div class="bahasakurek bgneopoyo paddingerek">
+            <!-- <hr class="abangbro" color="blue" size="10px" style="margin: 0px 0px 0px 0px;"> -->
+            <div class="paddingrek">
+                <h2 class="ilangnomargine">Bahasa program yang saya gunakan : </h2>
+                <ol class="ilangnomargine">
+                    <li class="tebel">HTML</li>
+                    <li class="tebel">CSS</li>
+                    <li class="tebel">JAVA</li>
+                    <li class="tebel">PHP</li>
+                </ol>
+            </div>
+        </div>
+        <div class="kirimiakupesanyo bgputih paddingcuy">
+            <form method="POST" action="mailto:hidayaharifpc@gmail.com" enctype="text/plain">
+                <div>Ada yang bisa saya bantu ?</div>
+                <!-- <input type="text" name="subject" /> -->
+
+                <!-- <div>Message</div> -->
+
+                <textarea name="pesan"></textarea>
+
+                <br />
+                <input type="submit" value="Send" />
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const chaosElements = document.querySelectorAll('.mumet');
+    let angle = 0;
+    const speed = 50;
+
+    function rotate360() {
+        angle += speed;            // speed (1 = pelan, 5 = cepat)
+        if (angle >= 360) angle -= 0;
+
+        chaosElements.forEach(el => {
+            el.style.transform = `rotate(${angle}deg)`;
+        });
+
+        requestAnimationFrame(rotate360);
+    }
+
+    rotate360();
+
+</script>
+
+
+</html>
